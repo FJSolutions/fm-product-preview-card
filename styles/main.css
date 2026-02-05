@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green-500: #3c8067;
+  --green-700: #1b4133;
+  --black: #1c232b;
+  --grey: #6c7289;
+  --cream: #f2ebe3;
+  --white: #fff;
+  --radius: .5em;
+}
+
+body {
+  background-color: var(--cream);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+  font-size: clamp(1em, .8em + 1vw, 1.2em);
+  display: flex;
+}
+
+.product-card {
+  border-radius: var(--radius);
+  background-color: var(--white);
+  margin: .7em;
+  display: grid;
+
+  & .product__image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  & .product__details {
+    border-radius: var(--radius);
+    flex-direction: column;
+    padding: 0 2.5em 2.5em;
+    font-size: .8em;
+    display: flex;
+
+    & h1 {
+      font-family: Fraunces, serif;
+      font-size: 2.2em;
+    }
+
+    & h2 {
+      letter-spacing: .5em;
+      margin-bottom: 1.5em;
+      font-size: 1.1em;
+      font-weight: normal;
+    }
+
+    & p {
+      margin: 1em 0;
+      line-height: 1.4em;
+    }
+
+    & .product__price {
+      align-items: center;
+      margin: .5em 0;
+      display: flex;
+
+      & :first-child {
+        color: var(--green-500);
+        margin-right: .5em;
+        font-family: Fraunces, serif;
+        font-size: 2.2em;
+        font-weight: bolder;
+      }
+
+      & :last-child {
+        text-decoration: line-through;
+      }
+    }
+
+    & button {
+      background-color: var(--green-500);
+      color: var(--white);
+      border: none;
+      border-radius: 1em;
+      justify-content: center;
+      align-items: center;
+      min-width: 100%;
+      margin: 1.5em auto .5em;
+      padding: 1em;
+      display: flex;
+
+      & img {
+        margin-right: .7em;
+      }
+    }
+  }
+}
+
+@media (width <= 375px) {
+  .product-card {
+    grid-template-rows: 1fr 1fr;
+
+    & .product__image {
+      border-radius: var(--radius) var(--radius) 0 0;
+      background-image: url("/images/image-product-mobile.jpg");
+    }
+  }
+}
+
+@media (width > 375px) {
+  .product-card {
+    grid-template-columns: 1fr 1fr;
+    max-width: 36em;
+
+    & .product__image {
+      border-radius: var(--radius) 0 0 var(--radius);
+      background-image: url("/images/image-product-desktop.jpg");
+    }
+
+    & .product__details {
+      & h2 {
+        padding-top: 2em;
+      }
+
+      & button {
+        cursor: pointer;
+      }
+
+      & button:hover {
+        background-color: var(--green-700);
+      }
+    }
+  }
+}
