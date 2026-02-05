@@ -41,9 +41,19 @@ Frontend Mentor challenges help you improve your coding skills by building reali
 
 Being much more intentional about CSS media queries and reducing overriding in the cascade. 
 
+Using a background image in a grid for the main image and adjusting the corners of the image
+for mobile of desktop orientations.
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@media (width <= 375px ) {
+  .product-card {
+    grid-template-rows: 1fr 1fr;
+
+    .product__image {
+      border-radius: var(--radius) var(--radius) 0 0;
+      background-image: url("/images/image-product-mobile.jpg");
+    }
+  }
 }
 ```
 ### Continued development
