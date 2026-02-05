@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "live-server --port=3210 ",
-    "css": "lightningcss ./src/styles/main.css -o ./styles/main.css",
+    "css": "lightningcss src/main.css -o ./styles/main.css",
     "build": "pnpm css && node _build.js",
     "preview": "live-server --port=4321 --open=docs"
   },

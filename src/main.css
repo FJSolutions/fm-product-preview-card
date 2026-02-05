@@ -105,7 +105,7 @@ body {
 
         .product__image {
             border-radius: var(--radius) var(--radius) 0 0;
-            background-image: url("/images/image-product-mobile.jpg");
+            background-image: url("../images/image-product-mobile.jpg");
         }
     }
 }
@@ -118,7 +118,7 @@ body {
 
         .product__image {
             border-radius: var(--radius) 0 0 var(--radius);
-            background-image: url("/images/image-product-desktop.jpg");
+            background-image: url("../images/image-product-desktop.jpg");
         }
 
         .product__details {
